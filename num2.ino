@@ -7,7 +7,7 @@ int tempLedPin = 2;
 int t = 0;
 dht DHT;
 
-#define DHT11_PIN 
+#define DHT11_PIN 9
 
 const int trigPin = 6;
 const int echoPin = 7;
@@ -63,11 +63,11 @@ void loop(){
   }  else {
     digitalWrite(ledRainPin, false);
   }
-  // measure the ping time in cm
+
   cm = 0.01723 * readUltrasonicDistance(6, 7);
   Serial.print(cm);
   Serial.println("cm");
-  delay(100); // Wait for 100 millisecond(s)
+  delay(100); 
   
   if (cm > minDist && cm < maxDist){
     garageDoor.write(90);
